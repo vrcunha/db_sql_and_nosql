@@ -42,7 +42,6 @@ So you now clone this repository and get your local copy.
 
  `$ git clone https://github.com/vrcunha/db_sql_and_nosql.git`
 
-<<<<<<< HEAD
 - **For MacOS users**
 	If you get an error message like:
 
@@ -51,16 +50,6 @@ So you now clone this repository and get your local copy.
 	Considere exportar o PATH abaixo e isso pode resolver seu problema. This solution was obtained from this [stack overflow](https://stackoverflow.com/a/65869751) question.
 
 	`export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$PATH"`
-=======
-    **For MacOS users**
-    If you get an error message like:
-
-    `NameError: name '_mysql' is not define`
-
-    Considere exportar o PATH abaixo e isso pode resolver seu problema. This solution was obtained from this [stack overflow](https://stackoverflow.com/a/65869751) question.
-
-    `export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$PATH"`
->>>>>>> 34d5161aa6c5527207eb77390acba970fb2d9cfb
 
 ## License
 This project follows the MIT License, Anyone can freely use.
