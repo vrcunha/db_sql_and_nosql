@@ -15,7 +15,7 @@ If you want to see a specific solution you choose a link bellow. By clicking you
 
 [**MySQL**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/mysql)
 
-[**PostgreSQL**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/postgres)
+[**PostgreSQL**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/postgresql)
 
 [**SQLite**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/sqlite)
 
