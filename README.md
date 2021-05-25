@@ -9,6 +9,7 @@ This project is the result of the course:
 - Bancos de Dados SQL e NoSQL do básico ao avançado.
 - Offered by Geek University
 - Platform: Udemy
+
 Here is a sample of crud interface with python for the Database systens presented in the course. In addition, optionally, a python file to create the database without the necessity of any db client.
 
 ----
@@ -17,11 +18,17 @@ This project was built using __Python__ and the list of database mangement syste
 If you want to see a specific solution you choose a link bellow. By clicking you go direct to an specific db crud solution.
 
 [**MySQL**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/mysql)
+
 [**PostgreSQL**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/postgres)
+
 [**SQLite**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/sqlite)
+
 [**MongoDB**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/mongo)
+
 [**Redis**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/redis)
+
 [**CouchDB**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/couch)
+
 [**Firebase**](https://github.com/vrcunha/db_sql_and_nosql/tree/main/firebase)
 
 ## Installation
@@ -35,6 +42,7 @@ So you now clone this repository and get your local copy.
 
  `$ git clone https://github.com/vrcunha/db_sql_and_nosql.git`
 
+<<<<<<< HEAD
 - **For MacOS users**
 	If you get an error message like:
 
@@ -43,6 +51,16 @@ So you now clone this repository and get your local copy.
 	Considere exportar o PATH abaixo e isso pode resolver seu problema. This solution was obtained from this [stack overflow](https://stackoverflow.com/a/65869751) question.
 
 	`export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$PATH"`
+=======
+    **For MacOS users**
+    If you get an error message like:
+
+    `NameError: name '_mysql' is not define`
+
+    Considere exportar o PATH abaixo e isso pode resolver seu problema. This solution was obtained from this [stack overflow](https://stackoverflow.com/a/65869751) question.
+
+    `export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$PATH"`
+>>>>>>> 34d5161aa6c5527207eb77390acba970fb2d9cfb
 
 ## License
 This project follows the MIT License, Anyone can freely use.
