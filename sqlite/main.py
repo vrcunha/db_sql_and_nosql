@@ -39,7 +39,7 @@ while True:
             price = True if obj_property == 'price' else False
             stock = True if obj_property == 'stock' else False
             update(obj_id, name, price, stock)
-        except psycopg2.errors.UndefinedColumn as e:
+        except sqlite3.Error as e:
             print(f'{e}')
     if opt == 4:
         obj_id = int(input('Insert the object id: '))
