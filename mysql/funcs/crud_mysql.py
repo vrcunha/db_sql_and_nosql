@@ -1,16 +1,18 @@
+import os
 import MySQLdb
+from dotenv import load_dotenv, find_dotenv
 
+load_dotenv(find_dotenv())
 
-def connect(db_name, user_name, password, host_name='localhost'):
+def connect():
     """Connects to MySQL database."""
     try:
         connection = MySQLdb.connect(
-            db=db_name,
-            host=host_name,
-            user=user_name,
-            passwd=password
+            db=os.getenv('MYSQL_DB_NAME'),
+            host=os.getenv('MYSQL_HOST'),
+            user=os.getenv('MYSQL_USER_NAME'),
+            passwd=os.getenv('MYSQL_PASSWORD')
         )
-        # print('Connection Succefully')
         return connection
     except MySQLdb.Error as e:
         print(f'Connection Error to MySQL server: {e}')
@@ -19,14 +21,10 @@ def connect(db_name, user_name, password, host_name='localhost'):
 def disconnect(connection):
     """Disconnects to MySQL database."""
     connection.close()
-    # print('Connection Closed.')
 
 def list_db_columns():
     """List DB columns."""
-    connection = connect(db_name='mysql_python.db', 
-                        user_name='Isaac', 
-                        password='123qwe'
-                        )
+    connection = connect()
     cursor = connection.cursor()
     cursor.execute('SELECT * FROM produtos')
     produtos = cursor.fetchall()
@@ -50,10 +48,7 @@ def check_operation(connection, cursor):
 
 def insert():
     """Insert new item in table."""
-    connection = connect(db_name='mysql_python.db', 
-                        user_name='Isaac', 
-                        password='123qwe'
-                        )
+    connection = connect()
     cursor = connection.cursor()
     nome = input('Insira o Nome do produto: ')
     preco = input('Insira o Preço do produto: ')
@@ -66,10 +61,7 @@ def insert():
 
 def update(id, name=False, price=False, stock=False):
     """Update an item selected by id."""
-    connection = connect(db_name='mysql_python.db', 
-                        user_name='Isaac', 
-                        password='123qwe'
-                        )
+    connection = connect()
     cursor = connection.cursor()
     if name:
         new_name = input('Insira o novo nome do produto: ')
@@ -92,10 +84,7 @@ def update(id, name=False, price=False, stock=False):
 
 def delete(id):
     """Delete an item selected by id."""
-    connection = connect(db_name='mysql_python.db', 
-                        user_name='Isaac', 
-                        password='123qwe'
-                        )
+    connection = connect()
     cursor = connection.cursor()
     cursor.execute(f"DELETE FROM produtos WHERE id = {int(id)}")
     check_operation(connection, cursor)

@@ -1,9 +1,16 @@
+import os
+from dotenv import load_dotenv, find_dotenv
+
 from sqlalchemy import (create_engine, MetaData, Column, 
                         Table, Integer, String, DECIMAL
                         )
 from sqlalchemy_utils import database_exists, create_database
 
-engine = create_engine('mysql+mysqldb://Isaac:123qwe@localhost/mysql_python.db', echo=False)
+load_dotenv(find_dotenv())
+
+engine = create_engine(f"mysql+mysqldb://{os.getenv('MYSQL_USER_NAME')}:" \
+                       f"{os.getenv('MYSQL_PASSWORD')}@{os.getenv('MYSQL_HOST')}/" \
+                       f"{os.getenv('MYSQL_DB_NAME')}", echo=False)
 
 if not database_exists(engine.url):
     create_database(engine.url)
