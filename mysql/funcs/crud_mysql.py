@@ -31,8 +31,8 @@ def list_db_columns():
     if len(produtos) > 0 :
         print('Table name: produtos')
         for produto in produtos:
-            result = f'Id: {produto[0]} | Nome: {produto[1]} |'\
-                     f' Preco: R$ {produto[2]} | Estoque: {produto[3]}'
+            result = f'Id: {produto[0]} | Name: {produto[1]} |'\
+                     f' Price: R$ {produto[2]} | Stock: {produto[3]}'
             print(len(result)*'-')
             print(result)
     else:
@@ -42,20 +42,20 @@ def list_db_columns():
 def check_operation(connection, cursor):
     connection.commit()
     if cursor.rowcount == 1:
-        print(f'Operação realizada com sucesso.')
+        print(f'Operation successful.')
     else:
-        print(f'A operação falhou.')
+        print(f'Operation failed.')
 
 def insert():
     """Insert new item in table."""
     connection = connect()
     cursor = connection.cursor()
-    nome = input('Insira o Nome do produto: ')
-    preco = input('Insira o Preço do produto: ')
-    estoque = input('Insira o Estoque do produto: ')
+    name = input('Enter product name: ')
+    price = input('Enter product price: ')
+    stock = input('Enter product stock: ')
     cursor.execute(f"INSERT INTO produtos" \
                    f"(nome, preco, estoque) VALUES " \
-                   f"('{nome}', {preco}, {estoque})")
+                   f"('{name}', {price}, {stock})")
     check_operation(connection, cursor)
     disconnect(connection)
 
@@ -64,22 +64,22 @@ def update(id, name=False, price=False, stock=False):
     connection = connect()
     cursor = connection.cursor()
     if name:
-        new_name = input('Insira o novo nome do produto: ')
+        new_name = input('Enter new product name: ')
         cursor.execute(f"UPDATE produtos SET nome='{new_name}' WHERE id = {int(id)}")
         check_operation(connection, cursor)
-        print('O nome do produto foi atualizado com sucesso.')
+        print('Product name was updated.')
     if price:
-        new_price = input('Insira o novo preço do produto: ')
+        new_price = input('Enter new product price: ')
         cursor.execute(f"UPDATE produtos SET preco={new_price} WHERE id = {int(id)}")
         check_operation(connection, cursor)
-        print('O preço do produto foi atualizado com sucesso.')
+        print('Product price was updated.')
     if stock:
-        new_stock = input('Insira o novo estoque do produto: ')
+        new_stock = input('Enter new product stock: ')
         cursor.execute(f"UPDATE produtos SET estoque={new_stock} WHERE id = {int(id)}")
         check_operation(connection, cursor)
-        print('O estoque do produto foi atualizado com sucesso.')
+        print('Product stock was updated.')
     else:
-        print('Nenhum item foi atualizado.')
+        print('Any item was updated.')
     disconnect(connection)
 
 def delete(id):
