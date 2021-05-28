@@ -43,7 +43,7 @@ So you now clone this repository and get your local copy.
 
 	`NameError: name '_mysql' is not define`
 
-	Considere exportar o PATH abaixo e isso pode resolver seu problema. This solution was obtained from this [stack overflow](https://stackoverflow.com/a/65869751) question.
+	Consider export the PATH bellow this may solve your problem. This solution was obtained from this [stack overflow](https://stackoverflow.com/a/65869751) question.
 
 	`export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$PATH"`
 
