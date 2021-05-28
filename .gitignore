@@ -1,8 +1,0 @@
-*.env
-*.db
-venv
-__pycache__
-couch
-firebase
-mongo
-redis
