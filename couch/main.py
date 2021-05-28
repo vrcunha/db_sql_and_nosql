@@ -1,4 +1,4 @@
-from funcs.crud_redis import (list_db_itens, insert,
+from funcs.crud_couch import (list_db_itens, insert,
                               delete, update)
 
 MENU_STR = """
@@ -11,7 +11,7 @@ MENU_STR = """
     """
 
 while True:
-    print('Welcome to Redis CRUD')
+    print('Welcome to CouchDB CRUD')
     print(MENU_STR)
     try:
         opt = int(input('Option: '))
