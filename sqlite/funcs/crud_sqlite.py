@@ -5,7 +5,7 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 def connect():
-    """Connects to PostgreSQL database."""
+    """Connects to SQLite database."""
     try:
         connection = sqlite3.connect('sqlite_python.db')
         # print('Connection Succefully')
@@ -15,7 +15,7 @@ def connect():
 
 
 def disconnect(connection):
-    """Disconnects to MySQL database."""
+    """Disconnects to SQLite database."""
     connection.close()
     # print('Connection Closed.')
 
